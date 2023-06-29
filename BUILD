@@ -1,12 +1,14 @@
-java_binary(
-  name = 'app',
-  main_class = 'br.com.afi.bazel.demo.DemoApplication',
-  srcs = glob(["src/main/java/**/*.java"]),
-  resources = glob(["src/main/resources/**"]),
-  deps = [
-    '@maven//:org_springframework_boot_spring_boot_starter_actuator',
-    '@maven//:org_springframework_boot_spring_boot_starter_web',
-    '@maven//:org_springframework_boot_spring_boot_autoconfigure',
-    '@maven//:org_springframework_boot_spring_boot',
-  ],
+load("@bazel_gazelle//:def.bzl", "gazelle")
+load("@bazel_gazelle//:def.bzl", "DEFAULT_LANGUAGES", "gazelle_binary")
+
+gazelle(
+    name = "gazelle",
+    gazelle = ":gazelle_bin",
+)
+
+gazelle_binary(
+    name = "gazelle_bin",
+    languages = DEFAULT_LANGUAGES + [
+        "@contrib_rules_jvm//java/gazelle",
+    ],
 )

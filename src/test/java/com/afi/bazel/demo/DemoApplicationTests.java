@@ -1,4 +1,4 @@
-package br.com.afi.bazel.demo;
+package com.afi.bazel.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
