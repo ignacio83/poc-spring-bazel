@@ -89,14 +89,16 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 
 JUNIT_JUPITER_VERSION = "5.9.3"
 JUNIT_PLATFORM_VERSION = "1.9.3"
+SPRING_BOOT_VERSION = "3.1.1"
 
 maven_install(
   artifacts = [
-    'org.springframework.boot:spring-boot-autoconfigure:3.1.1',
-    'org.springframework.boot:spring-boot-starter-web:3.1.1',
-    'org.springframework.boot:spring-boot-starter-actuator:3.1.1',
-    'org.springframework.boot:spring-boot-starter-test:3.1.1',
-    'org.springframework:spring-test:6.0.10',
+    "org.springframework.boot:spring-boot-autoconfigure:%s" % SPRING_BOOT_VERSION,
+    "org.springframework.boot:spring-boot-starter-web:%s" % SPRING_BOOT_VERSION,
+    "org.springframework.boot:spring-boot-starter-actuator:%s" % SPRING_BOOT_VERSION,
+    "org.springframework.boot:spring-boot-starter-test:%s" % SPRING_BOOT_VERSION,
+    "org.springframework.boot:spring-boot-test:%s" % SPRING_BOOT_VERSION,
+    "org.springframework:spring-test:6.0.10",
     "org.junit.platform:junit-platform-launcher:%s" % JUNIT_PLATFORM_VERSION,
     "org.junit.platform:junit-platform-reporting:%s" % JUNIT_PLATFORM_VERSION,
     "org.junit.jupiter:junit-jupiter-api:%s" % JUNIT_JUPITER_VERSION,

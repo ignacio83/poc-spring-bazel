@@ -2,6 +2,7 @@ load("@contrib_rules_jvm//java:defs.bzl", "java_test_suite")
 
 java_test_suite(
     name = "demo",
+    size = "medium",  # keep
     srcs = ["DemoApplicationTests.java"],
     runner = "junit5",
     test_suffixes = ["Tests.java"],  # keep
@@ -13,6 +14,7 @@ java_test_suite(
     deps = [
         "//src/main/java/com/afi/bazel/demo",
         "@maven//:org_junit_jupiter_junit_jupiter_api",
-        "@maven//:org_springframework_spring_test",
+        "@maven//:org_springframework_boot_spring_boot_test",
+        "@maven//:org_springframework_spring_test",  # keep
     ],
 )
