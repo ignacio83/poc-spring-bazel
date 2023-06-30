@@ -12,7 +12,7 @@ java_library(
 
 java_binary(
     name = "DemoApplication",
-    main_class = "br.com.afi.bazel.demo.DemoApplication",
+    main_class = "com.afi.bazel.demo.DemoApplication",
     visibility = ["//visibility:public"],
     runtime_deps = [":demo"],
 )
